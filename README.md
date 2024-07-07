@@ -1,0 +1,97 @@
+# NYC Taxi & Limousine Commission (TLC) Trip Analysis
+
+## Background
+The NYC Taxi & Limousine Commission (TLC) is the regulatory body responsible for licensing and regulating New York City's medallion (yellow) taxis, for-hire vehicles (including green Boro Taxis, black cars, and livery cars), commuter vans, and paratransit vehicles. The TLC's mission is to ensure that these services are safe, efficient, and accessible for the public.
+
+## Problem Statement
+The NYC Taxi & Limousine Commission (TLC) oversees the regulation of yellow and green taxis in New York City, ensuring the provision of safe, efficient, and accessible transportation services. However, the dynamic nature of urban transportation presents several challenges:
+
+1. **Optimizing Fleet Operations**: Taxi companies need to manage their fleets efficiently to reduce idle time, meet fluctuating demand, and minimize operational costs.
+2. **Improving Customer Satisfaction**: Understanding passenger behavior and preferences is crucial for enhancing service quality and customer satisfaction.
+3. **Maximizing Revenue**: Identifying factors that influence fare amounts, tips, and additional charges can help in devising strategies to maximize revenue.
+4. **Regulatory Compliance**: Ensuring that all taxi services comply with city regulations regarding fares, surcharges, and reporting requirements.
+5. **Assessing Weather Impact**: Understanding how weather conditions influence the demand for taxi services to improve operational planning and customer service.
+
+## Objective
+To address these challenges, we aim to leverage the NYC TLC Trip Record dataset to:
+
+1. Analyze Demand Patterns: Identify peak times, popular routes, and high-demand locations to optimize fleet deployment.
+2. Assess Operational Efficiency: Evaluate trip durations, distances, and idle times to improve operational efficiency.
+3. Understand Customer Behavior: Analyze passenger counts, payment methods, and tip amounts to gain insights into customer preferences.
+4. Revenue Analysis: Break down fare structures and additional charges to identify revenue optimization opportunities.
+5. Assess Weather Impact: Evaluate how different weather conditions affect the demand for taxi services to enhance operational decision-making and customer satisfaction.
+
+## Research Questions
+
+### 1. Demand Analysis:
+- What are the peak hours for taxi services?
+- Which locations have the highest pickup and dropoff frequencies?
+
+### 2. Operational Efficiency:
+- What are the average trip durations and distances?
+- How can fleet deployment be optimized based on trip data?
+
+### 3. Customer Insights:
+- What are the common payment methods used by passengers?
+- How do tip amounts vary based on different factors (e.g., trip distance, fare amount)?
+
+### 4. Revenue Optimization:
+- What are the key components of fare amounts?
+- What factors impact tip amounts?
+
+### 5. Weather Impact:
+- How do weather conditions (e.g., rain, snow, temperature) affect the demand for taxi services?
+- Are there specific weather conditions that significantly increase or decrease taxi usage?
+
+## Description of Features
+
+| Features                  | Description                                                                                                                       |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `VendorID`                | A code indicating the LPEP provider that provided the record.                                                                     |
+|                           | 1 = Creative Mobile Technologies, LLC                                                                                             |
+|                           | 2 = VeriFone Inc.                                                                                                                 |   
+| `lpep_pickup_datetime`    | The date and time when the meter was engaged.                                                                                     |
+| `lpep_dropoff_datetime`   | The date and time when the meter was disengaged.                                                                                  |
+| `passenger_count`         | The number of passengers in the vehicle. This is a driver-entered value.                                                           |
+| `trip_distance`           | The elapsed trip distance in miles reported by the taximeter.                                                                     |
+| `PULocationID`            | TLC Taxi Zone in which the taximeter was engaged.                                                                                 |
+| `DOLocationID`            | TLC Taxi Zone in which the taximeter was disengaged.                                                                              |
+| `RatecodeID`              | The final rate code in effect at the end of the trip.                                                                             |
+|                           | 1 = Standard rate                                                                                                                 |
+|                           | 2 = JFK                                                                                                                           |
+|                           | 3 = Newark                                                                                                                        |
+|                           | 4 = Nassau or Westchester                                                                                                         |
+|                           | 5 = Negotiated fare                                                                                                               |
+|                           | 6 = Group ride                                                                                                                    |
+| `store_and_fwd_flag`      | Indicates whether the trip record was held in vehicle memory before sending to the vendor due to no connection to the server.    |
+|                           | Y = store and forward trip                                                                                                        |
+|                           | N = not a store and forward trip                                                                                                  |
+| `payment_type`            | A numeric code signifying how the passenger paid for the trip.                                                                    |
+|                           | 1 = Credit card                                                                                                                   |
+|                           | 2 = Cash                                                                                                                          |
+|                           | 3 = No Charge                                                                                                                     |
+|                           | 4 = Dispute                                                                                                                       |
+|                           | 5 = Unknown                                                                                                                       |
+|                           | 6 = Voided Trip                                                                                                                   |
+| `fare_amount`             | The time-and-distance fare calculated by the meter.                                                                              |
+| `extra`                   | Additional charges such as rush hour and overnight charges.                                                                       |
+| `mta_tax`                 | $0.50 MTA tax automatically triggered based on the metered rate in use.                                                           |
+| `improvement_surcharge`   | $0.30 improvement surcharge assessed on hailed trips at the flag drop.                                                            |
+| `tip_amount`              | Automatically populated for credit card tips. Cash tips are not included.                                                         |
+| `tolls_amount`            | The total amount of all tolls paid during the trip.                                                                               |
+| `ehail_fee`               | An additional charge of $1 automatically applied for each trip booked through the e-hail platform.                               |
+| `total_amount`            | The total amount charged to passengers (sum of fare amount, extra, mta_tax, improvement_surcharge, tip_amount, tolls_amount, ehail_fee). |
+| `trip_type`               | A code indicating whether the trip was a street hail or a dispatch.                                                               |
+|                           | 1 = Street-hail                                                                                                                   |
+|                           | 2 = Dispatch                                                                                                                      |
+| `congestion_surcharge`    | The congestion fee of $2.75 applies to trips with yellow and green taxis in southern Manhattan from 96th St. implemented in 2019. |
+
+## Analysis and Visualizations
+The analysis includes a comprehensive examination of the dataset to address the research questions and achieve the project objectives. Visualizations such as heatmaps, histograms, bar charts, and scatter plots are used to represent the findings effectively.
+
+## Conclusion
+This project aims to provide valuable insights into the operations of NYC taxis, helping the TLC and taxi companies optimize their services, improve customer satisfaction, and maximize revenue.
+
+---
+
+For more detailed analysis and visualizations, please refer to the accompanying notebook and reports.
